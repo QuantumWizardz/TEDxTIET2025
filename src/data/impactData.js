@@ -28,7 +28,7 @@ export const impactData = {
       ,
       number: "8 years",
       label: "Presence",
-      description: "Eight Year Lagacy",
+      description: "Eight Year Legacy",
       value: 100,
       maxProgress: 100,
       isSocialMedia: true,

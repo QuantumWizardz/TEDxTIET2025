@@ -1,12 +1,12 @@
-Add this at the very top
 body {
   background-color: #000;
   margin: 0;
   padding: 0;
-  color: #fff; /* Optional: so text outside cards is visible */
+  color: #fff;
+  /* Optional: so text outside cards is visible */
 }
 
-.committee-heading{
+.committee-heading {
   color: white;
 }
 
@@ -45,6 +45,7 @@ body {
   }
 }
 
+/* ================== Cards ================== */
 .chromaa-card {
   position: relative;
   display: flex;
@@ -58,7 +59,9 @@ body {
 
   --mouse-x: 50%;
   --mouse-y: 50%;
-  --spotlight-color: rgba(255, 255, 255, 0.3);
+  --spotlight-color: rgba(229, 70, 70, 0.15);
+  /* subtle red glow */
+  cursor: pointer;
 }
 
 .chromaa-card:hover {
@@ -76,10 +79,28 @@ body {
   z-index: 2;
 }
 
-.chromaa-card:hover::before {
-  opacity: 1;
+/* Hover only for large screens */
+@media (min-width: 481px) {
+  .chromaa-card:hover::before {
+    opacity: 1;
+  }
 }
 
+/* Mobile/Responsive static red background like EbGrid */
+@media (max-width: 480px) {
+  .chromaa-card {
+    background: #e54646;
+    /* static red */
+    border-radius: 10px;
+  }
+
+  .chromaa-card::before {
+    display: none;
+    /* remove hover circle */
+  }
+}
+
+/* ================== Image Wrapper ================== */
 .chromaa-img-wrapper {
   position: relative;
   z-index: 1;
@@ -101,6 +122,7 @@ body {
   display: block;
 }
 
+/* ================== Info ================== */
 .chromaa-info {
   position: relative;
   z-index: 1;
@@ -118,6 +140,7 @@ body {
   color: #aaa;
 }
 
+/* ================== Overlay & Fade ================== */
 .chromaa-overlay {
   position: absolute;
   inset: 0;
@@ -127,28 +150,24 @@ body {
   -webkit-backdrop-filter: grayscale(1) brightness(0.78);
   background: rgba(0, 0, 0, 0.001);
 
-  mask-image: radial-gradient(
-    circle var(--r) at var(--x) var(--y),
-    transparent 0%,
-    transparent 15%,
-    rgba(0, 0, 0, 0.1) 30%,
-    rgba(0, 0, 0, 0.22) 45%,
-    rgba(0, 0, 0, 0.35) 60%,
-    rgba(0, 0, 0, 0.5) 75%,
-    rgba(0, 0, 0, 0.68) 88%,
-    white 100%
-  );
-  -webkit-mask-image: radial-gradient(
-    circle var(--r) at var(--x) var(--y),
-    transparent 0%,
-    transparent 15%,
-    rgba(0, 0, 0, 0.1) 30%,
-    rgba(0, 0, 0, 0.22) 45%,
-    rgba(0, 0, 0, 0.35) 60%,
-    rgba(0, 0, 0, 0.5) 75%,
-    rgba(0, 0, 0, 0.68) 88%,
-    white 100%
-  );
+  mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      transparent 0%,
+      transparent 15%,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 0.22) 45%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0.5) 75%,
+      rgba(0, 0, 0, 0.68) 88%,
+      white 100%);
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      transparent 0%,
+      transparent 15%,
+      rgba(0, 0, 0, 0.1) 30%,
+      rgba(0, 0, 0, 0.22) 45%,
+      rgba(0, 0, 0, 0.35) 60%,
+      rgba(0, 0, 0, 0.5) 75%,
+      rgba(0, 0, 0, 0.68) 88%,
+      white 100%);
 }
 
 .chromaa-fade {
@@ -160,29 +179,95 @@ body {
   -webkit-backdrop-filter: grayscale(1) brightness(0.78);
   background: rgba(0, 0, 0, 0.001);
 
-  mask-image: radial-gradient(
-    circle var(--r) at var(--x) var(--y),
-    white 0%,
-    white 15%,
-    rgba(255, 255, 255, 0.9) 30%,
-    rgba(255, 255, 255, 0.78) 45%,
-    rgba(255, 255, 255, 0.65) 60%,
-    rgba(255, 255, 255, 0.5) 75%,
-    rgba(255, 255, 255, 0.32) 88%,
-    transparent 100%
-  );
-  -webkit-mask-image: radial-gradient(
-    circle var(--r) at var(--x) var(--y),
-    white 0%,
-    white 15%,
-    rgba(255, 255, 255, 0.9) 30%,
-    rgba(255, 255, 255, 0.78) 45%,
-    rgba(255, 255, 255, 0.65) 60%,
-    rgba(255, 255, 255, 0.5) 75%,
-    rgba(255, 255, 255, 0.32) 88%,
-    transparent 100%
-  );
+  mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      white 0%,
+      white 15%,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 0.78) 45%,
+      rgba(255, 255, 255, 0.65) 60%,
+      rgba(255, 255, 255, 0.5) 75%,
+      rgba(255, 255, 255, 0.32) 88%,
+      transparent 100%);
+  -webkit-mask-image: radial-gradient(circle var(--r) at var(--x) var(--y),
+      white 0%,
+      white 15%,
+      rgba(255, 255, 255, 0.9) 30%,
+      rgba(255, 255, 255, 0.78) 45%,
+      rgba(255, 255, 255, 0.65) 60%,
+      rgba(255, 255, 255, 0.5) 75%,
+      rgba(255, 255, 255, 0.32) 88%,
+      transparent 100%);
 
   opacity: 1;
   transition: opacity 0.25s ease;
+}
+
+/* EC Grid general styles (large screen hover) */
+.ec-grid-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 280px;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #333;
+  transition: border-color 0.3s ease;
+  background: var(--card-gradient);
+
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(229, 70, 70, 0.15);
+  cursor: pointer;
+}
+
+.ec-grid-card:hover {
+  border-color: var(--card-border);
+}
+
+.ec-grid-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 70%);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 2;
+}
+
+/* Hover only for large screens */
+@media (min-width: 481px) {
+  .ec-grid-card:hover::before {
+    opacity: 1;
+  }
+}
+
+/* Responsive/mobile static red background (like EbGrid) */
+@media (max-width: 480px) {
+  .ec-grid-card {
+    background: #e54646;
+    /* static red */
+    border-radius: 10px;
+  }
+
+  .ec-grid-card::before {
+    display: none;
+    /* remove hover circle */
+  }
+}
+
+@media (max-width: 1000px) {
+  .chromaa-card {
+    animation: float 3s ease-in-out infinite;
+    background: rgba(229, 70, 70, 0.15) !important;
+    /* keep red background */
+    border-color: #e54646;
+  }
+
+  /* Disable spotlight hover effect for mobile */
+  .chromaa-card::before,
+  .chromaa-overlay,
+  .chromaa-fade {
+    display: none !important;
+  }
 }

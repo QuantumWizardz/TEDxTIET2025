@@ -13,7 +13,7 @@ code {
 }
 
 body {
-  overflow-y:scroll;      /* keep vertical scroll working */
+  overflow-y:auto;      /* keep vertical scroll working */
   scrollbar-width: none !important;
 }
 

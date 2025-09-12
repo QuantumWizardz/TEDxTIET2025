@@ -74,9 +74,8 @@ export const EcGrid = ({
       image: dummyimages[i],
       title: titles[i],
       borderColor: ["#e54646ff", "#b91024ff", "#f50b3aff", "#f50b3aff", "#f50b3aff", "#f50b3aff"][i % 6],
-      gradient: `linear-gradient(${135 + (i * 10) % 360}deg, ${
-        ["#f50b3aff", "#f50b3aff", "#f50b3aff", "#EF4444", "#f50b3aff", "#f50b3aff"][i % 6]
-      }, #000)`,
+      gradient: `linear-gradient(${135 + (i * 10) % 360}deg, ${["#f50b3aff", "#f50b3aff", "#f50b3aff", "#EF4444", "#f50b3aff", "#f50b3aff"][i % 6]
+        }, #000)`,
       url: "https://example.com",
     })),
   ];
@@ -163,9 +162,9 @@ export const EcGrid = ({
   };
 
   const handleCardClick = (url) => {
-    if (url) {
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
+    // if (url) {
+    //   window.open(url, "_blank", "noopener,noreferrer");
+    // }
   };
 
   return (
