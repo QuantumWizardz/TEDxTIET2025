@@ -18,6 +18,8 @@ import ContactForm from "./Components/ContactForm.jsx";
 import InfiniteGallery from "./Components/infiniteGallery.jsx"
 import EbGrid from "./Components/EbGrid.jsx";
 import PopupOverlay from "./Components/PopupOverlay";
+import EventDetails from "./Components/EventDetails";
+
 
 
 // Scroll handler for /aboutus → testimonials
@@ -65,6 +67,7 @@ function App() {
             <>
               <header className="App-header">
                 <HeroSection />
+                <EventDetails />
                 <div id="testimonials"></div>
                 <TestimonialSlider />
               </header>
