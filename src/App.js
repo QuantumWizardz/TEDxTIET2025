@@ -17,6 +17,8 @@ import Reveal from "./Components/Reveal"; // ✅ import preloader
 import ContactForm from "./Components/ContactForm.jsx";
 import InfiniteGallery from "./Components/infiniteGallery.jsx"
 import EbGrid from "./Components/EbGrid.jsx";
+import PopupOverlay from "./Components/PopupOverlay";
+
 
 // Scroll handler for /aboutus → testimonials
 function ScrollHandler() {
@@ -69,6 +71,7 @@ function App() {
               <StatsOverview />
               <Cards />
               <Footer />
+              <PopupOverlay />
             </>
           }
         />
