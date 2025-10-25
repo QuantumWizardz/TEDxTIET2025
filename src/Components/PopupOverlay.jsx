@@ -20,7 +20,7 @@ const PopupOverlay = () => {
   };
 
 //   const handleRedirect = () => {
-//     navigate("/event"); // Change this to your desired route or external link
+//     navigate("/event"); // Change this to your desired route or external link.
 //   };
 const handleRedirect = () => {
     window.open("https://www.instagram.com/reel/DQMF8zeidDn/", "_blank");
