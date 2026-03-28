@@ -1,8 +1,8 @@
 import { useRef, useEffect } from "react";
 import { gsap } from "gsap";
 import "./EcGrid.css";
-import Img1 from "../assets/gridimages/img1.webp";
 import Img3 from "../assets/gridimages/img3.webp";
+import Img1 from "../assets/gridimages/img1.webp";
 import Img4 from "../assets/gridimages/img4.webp";
 import Img5 from "../assets/gridimages/img5.webp";
 import Img6 from "../assets/gridimages/img6.webp";
